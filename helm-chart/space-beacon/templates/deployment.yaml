@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+    spec:
+      containers:
+        - name: space_beacon
+          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          ports:
+              containerPort: 80
+          resources:
+            request:
+              memory: "16Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"

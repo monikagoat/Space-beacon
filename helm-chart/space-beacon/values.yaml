@@ -1,0 +1,12 @@
+appName: space-beacon-app
+
+port: 80
+
+namespace: galaxy
+
+configmap:
+  name: beacon-configmap
+
+image:
+  name: goat7/goat-learn
+  tag: latest
