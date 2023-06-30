@@ -8,18 +8,6 @@ locals {
   cluster_name = "galaxy-eks"
 }
 
-#resource "aws_subnet" "private_subnet" {
-#  vpc_id            = module.vpc.vpc_id
-#  cidr_block        = "192.168.10.192/26"
-#  availability_zone = "us-east-1a"
-#}
-#
-#resource "aws_subnet" "public_subnet" {
-#  vpc_id            = module.vpc.vpc_id
-#  cidr_block        = "192.168.10.128/26"
-#  availability_zone = "us-east-1b"
-#}
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"

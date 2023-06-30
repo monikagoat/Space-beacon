@@ -12,6 +12,6 @@ provider "helm" {
 
 resource "helm_release" "space-beacon" {
   name       = "space-beacon"
-  repository = "./charts"
+  repository = "../terraform/charts"
   chart      = "space-beacon"
 }
